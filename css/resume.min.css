@@ -1,0 +1,552 @@
+/*! * Start Bootstrap - Resume v4.0.0-beta.2 (https://startbootstrap.com/template-overviews/resume) * Copyright 2013-2017 Start Bootstrap * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-resume/blob/master/LICENSE) */
+/* Define light mode colors as the default */
+:root {
+  --background-color: #f9f9f9; /* Softer white for less strain */
+  --text-color: #2c2c2c; /* Deep gray for better readability */
+  --primary-color: #00bcd4; /* Vibrant coral for accents */
+  --secondary-color: #adb5bd; /* Neutral gray for secondary elements */
+  --hover-color: #42a5f5; /* Bright blue for interactive elements */
+  --popup-background: var(
+    --primary-color
+  ); /* Matches primary for consistency */
+  --popup-text: var(--background-color); /* Contrast against primary */
+  --icon-color: #6c757d; /* Mid-gray for icons */
+  --icon-hover-color: var(--hover-color); /* Matches hover for consistency */
+}
+
+/* Define dark mode colors */
+.dark-mode {
+  --background-color: #121212; /* True black for modern dark mode */
+  --text-color: #e4e4e4; /* Softer white for less strain */
+  --primary-color: #bb86fc; /* Lavender for a calm accent */
+  --secondary-color: #616161; /* Subtle gray for secondary elements */
+  --hover-color: #03dac6; /* Vibrant teal for highlights */
+  --popup-background: var(
+    --primary-color
+  ); /* Matches primary for consistency */
+  --popup-text: var(--background-color); /* Contrast against primary */
+  --icon-color: #e0e0e0; /* Light gray for icons */
+  --icon-hover-color: var(--hover-color); /* Matches hover for consistency */
+}
+
+body {
+  font-family: "Open Sans", serif;
+  padding-top: 54px;
+  background-color: var(--background-color);
+  color: var(--text-color);
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 0;
+    padding-left: 17rem;
+  }
+}
+
+.announcement-item {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  /* adjust as needed */
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Saira Extra Condensed", serif;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+h1 {
+  font-size: 6rem;
+  line-height: 5.5rem;
+}
+
+h2 {
+  font-size: 3.5rem;
+}
+
+.subheading {
+  text-transform: uppercase;
+  font-weight: 500;
+  font-family: "Saira Extra Condensed", serif;
+  font-size: 1.35rem;
+}
+
+.list-social-icons a {
+  color: var(--icon-color);
+}
+
+.list-social-icons a:hover {
+  color: var(--primary-color);
+}
+
+.list-social-icons a .fa-lg {
+  font-size: 1.75rem;
+}
+
+.list-icons {
+  font-size: 3rem;
+}
+
+.list-icons .list-inline-item i:hover {
+  color: var(--primary-color);
+}
+
+#sideNav .navbar-nav .nav-item .nav-link {
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+@media (min-width: 992px) {
+  #sideNav {
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    width: 17rem;
+    height: 100vh;
+  }
+
+  #sideNav .navbar-brand {
+    display: flex;
+    margin: auto auto 0;
+    padding: 0.5rem;
+  }
+
+  #sideNav .navbar-brand .img-profile {
+    max-width: 10rem;
+    max-height: 10rem;
+    border: 0.5rem solid rgba(255, 255, 255, 0.2);
+  }
+
+  #sideNav .navbar-collapse {
+    display: flex;
+    align-items: flex-start;
+    flex-grow: 0;
+    width: 100%;
+    margin-bottom: auto;
+  }
+
+  #sideNav .navbar-collapse .navbar-nav {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  #sideNav .navbar-collapse .navbar-nav .nav-item {
+    display: block;
+  }
+
+  #sideNav .navbar-collapse .navbar-nav .nav-item .nav-link {
+    display: block;
+  }
+}
+
+section.resume-section {
+  /* border-bottom: 1px solid #dee2e6; */
+  padding-top: 2rem !important;
+  padding-bottom: 2rem !important;
+}
+
+section.resume-section .resume-item .resume-date {
+  min-width: none;
+}
+
+@media (min-width: 768px) {
+  section.resume-section {
+    min-height: 100vh;
+  }
+
+  section.resume-section .resume-item .resume-date {
+    min-width: 18rem;
+  }
+}
+
+@media (min-width: 992px) {
+  section.resume-section {
+    padding-top: 2rem !important;
+    padding-bottom: 2rem !important;
+  }
+}
+
+.bg-primary {
+  background-color: var(--primary-color) !important;
+}
+
+.text-primary {
+  color: var(--primary-color) !important;
+  font-weight: bold;
+}
+
+a {
+  color: var(--primary-color);
+}
+
+a:active,
+a:focus,
+a:hover {
+  color: #299bc5;
+}
+
+.floating-icon {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 50px;
+  height: 50px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border-radius: 50%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  /*animation: pulse 2s infinite;*/
+}
+
+.floating-icon:hover {
+  background-image: linear-gradient(270deg, var(--primary-color), #299bc5);
+  background-size: 400% 400%;
+  animation: colorChange 5s ease infinite;
+}
+
+.floating-icon:hover svg {
+  stroke: var(--background-color);
+}
+
+.floating-icon i {
+  font-size: 24px;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(214, 106, 58, 0.7);
+  }
+
+  70% {
+    transform: scale(1.2);
+    box-shadow: 0 0 0 10px rgba(214, 106, 58, 0);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(214, 106, 58, 0);
+  }
+}
+
+@keyframes colorChange {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Popup text CSS */
+
+.social-icon {
+  position: relative;
+}
+
+.popup-text {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  padding: 10px 15px;
+  background-color: var(--primary-color);
+  color: var(--background-color);
+  border-radius: 5px;
+  font-size: 14px;
+  white-space: nowrap;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.25);
+  margin-top: 10px;
+  max-width: 200px;
+  line-height: 1.4;
+}
+
+.social-icon:hover .popup-text {
+  display: block;
+}
+
+/*Profile lighing effect*/
+
+@media (max-width: 992px) {
+  .navbar-brand {
+    display: flex;
+    align-items: center;
+  }
+
+  .img-profile.d-lg-none {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+  }
+}
+
+@keyframes glowing {
+  0% {
+    box-shadow: 0 0 3px #fff, 0 0 6px #fff, 0 0 9px #fff, 0 0 12px #fff;
+  }
+
+  100% {
+    box-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff, 0 0 20px #fff;
+  }
+}
+
+.img-profile {
+  border-radius: 50%;
+  animation: glowing 1s infinite alternate;
+}
+
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+
+  40% {
+    transform: translateY(-15px);
+  }
+
+  60% {
+    transform: translateY(-10px);
+  }
+}
+
+.list-social-icons .fa-stack {
+  /* animation: bounce 4s ease-in-out infinite; */
+  position: relative;
+}
+
+.list-social-icons .fa-stack::before {
+  content: "";
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+  padding: 5px;
+  border-radius: 5px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 14px;
+  width: auto;
+  white-space: nowrap;
+  bottom: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-bottom: 10px;
+}
+
+.list-social-icons .fa-stack[data-tooltip]:hover::before {
+  content: attr(data-tooltip);
+  opacity: 1;
+}
+
+/* Skills icon wave animation. */
+
+/* Define the keyframes for the highlight and wave animation */
+@keyframes highlight-wave {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+
+  50% {
+    transform: scale(1.3);
+    opacity: 0.6;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Add the enlarge effect on hover */
+.list-inline-item.skill-icon {
+  position: relative;
+  display: inline-block;
+  transition: transform 0.3s;
+}
+
+.list-inline-item.skill-icon:hover {
+  transform: scale(1.6);
+}
+
+/* Display the popup text when hovering over the icon */
+.list-inline-item.skill-icon:hover .popup-text {
+  display: block;
+}
+
+/*Image*/
+
+.project-image-wrapper {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 10px;
+}
+
+.project-image {
+  width: 65px;
+  height: 65px;
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.text-console {
+  font-family: "Courier New", Courier, monospace; /* Monospace font for terminal style */
+  color: #00ff00; /* Bright green for classic terminal look */
+  font-weight: normal; /* Standard terminal text weight */
+  background-color: #000; /* Optional: black background for extra terminal feel */
+  padding: 2px 4px; /* Optional: padding to create a text block effect */
+  border-radius: 4px; /* Optional: rounded corners */
+  font-size: 1.2rem; /* Fallback for older browsers */
+  font-size: calc(1.2rem + 0.5vw) !important;
+  text-transform: uppercase;
+}
+
+/* Ensure the nav-item is a flex container to center the content */
+#sideNav .navbar-collapse .navbar-nav .nav-item {
+  display: flex !important; /* Use flexbox to control alignment */
+  justify-content: center !important; /* Center horizontally */
+  align-items: center !important; /* Center vertically */
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100% !important; /* Ensure the item takes the full height available */
+}
+
+/* Style for the theme toggle container */
+.toggle-container {
+  display: flex;
+  justify-content: center; /* Centers the toggle inside the li */
+  align-items: center; /* Vertically centers the toggle */
+  cursor: pointer;
+  position: relative;
+  width: 60px; /* Width of the toggle */
+  height: 30px; /* Height of the toggle */
+  background-color: #ddd; /* Light background for the toggle */
+  border-radius: 30px;
+  transition: background-color 0.3s;
+}
+
+/* The slider inside the toggle */
+.slider {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 26px; /* Size of the slider */
+  height: 26px;
+  background-color: #fff;
+  border-radius: 50%;
+  transition: transform 0.3s;
+}
+
+/* Default state: the sun icon is on the left */
+#sun-icon {
+  position: absolute;
+  left: 10px;
+  transition: opacity 0.3s;
+}
+
+#moon-icon {
+  position: absolute;
+  right: 10px;
+  transition: opacity 0.3s;
+}
+
+/* Dark mode theme toggle */
+body.dark-mode .toggle-container {
+  background-color: #333; /* Dark background for dark mode */
+}
+
+/* Slider when toggled to dark mode */
+body.dark-mode .slider {
+  transform: translateX(30px); /* Move the slider to the right */
+}
+
+/* Show the moon icon in dark mode */
+body.dark-mode #sun-icon {
+  opacity: 1; /* Hide the sun icon */
+}
+
+body.dark-mode #moon-icon {
+  opacity: 1; /* Show the moon icon */
+}
+
+.company-card {
+  background-color: #f8f9fa;
+  border-radius: 8px;
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  height: 100px; /* Ensure enough height to center vertically */
+  margin: 10px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: var(--secondary-color);
+  transition: box-shadow 0.3s ease; /* Smooth shadow on hover (optional) */
+}
+
+.company-card .skill-icon {
+  text-align: center;
+  display: flex;
+  justify-content: center; /* Center horizontally */
+  align-items: center; /* Center vertically */
+  transition: transform 0.3s ease; /* Smooth transform for scaling */
+}
+
+.company-card .skill-icon i {
+  font-size: 48px; /* Adjust icon size as needed */
+}
+
+.company-card .skill-icon.one i {
+  font-size: 4rem; /* Adjust icon size as needed */
+}
+
+.company-card .skill-icon.two i {
+  font-size: 5rem; /* Adjust icon size as needed */
+}
+
+.company-card .skill-icon.seven i {
+  font-size: 5.5rem; /* Adjust icon size as needed */
+}
+
+.company-card:hover {
+  color: var(--primary-color);
+}
+
+.company-card:hover .skill-icon {
+  transform: scale(1.2);
+}
+
+.dark-mode .fa-inverse {
+  color: var(--background-color);
+}
