@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="560" height="80" viewBox="0 0 560 80" role="img" aria-label="Hi there, I'm Hemant">
+  <style>
+    text {
+      font-family: 'Segoe UI', Ubuntu, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      font-weight: 700;
+      font-size: 30px;
+    }
+    .title  { fill: #1f2328; }
+    .cursor { fill: #2ea043; }
+    @media (prefers-color-scheme: dark) {
+      .title  { fill: #e6edf3; }
+      .cursor { fill: #3fb950; }
+    }
+  </style>
+
+  <defs>
+    <clipPath id="type">
+      <rect x="120" y="0" width="0" height="80">
+        <animate attributeName="width" calcMode="discrete"
+          dur="1.9s" fill="freeze"
+          keyTimes="0;0.0455;0.0909;0.1364;0.1818;0.2273;0.2727;0.3182;0.3636;0.4091;0.4545;0.5;0.5455;0.5909;0.6364;0.6818;0.7273;0.7727;0.8182;0.8636;0.9091;0.9545;1"
+          values="0;17.1;34.2;51.3;68.4;85.5;102.5;119.6;136.7;153.8;170.9;188;205.1;222.2;239.3;256.4;273.5;290.5;307.6;324.7;341.8;358.9;376"/>
+      </rect>
+    </clipPath>
+  </defs>
+
+  <!-- Everything is typed in left-to-right through the clip -->
+  <g clip-path="url(#type)">
+    <!-- "Hi there" -->
+    <text class="title" x="258" y="50" text-anchor="end">Hi there</text>
+
+    <!-- Waving hand -->
+    <g fill="#f5b93f">
+      <animateTransform attributeName="transform" type="rotate" additive="sum"
+        dur="2.5s" begin="1.9s" repeatCount="indefinite"
+        keyTimes="0; 0.08; 0.16; 0.24; 0.32; 0.40; 0.48; 0.6; 0.8; 1"
+        values="0 290 54; 14 290 54; -8 290 54; 14 290 54; -4 290 54; 10 290 54; 0 290 54; 0 290 54; 0 290 54; 0 290 54"/>
+      <rect x="276"   y="20" width="6"   height="20" rx="3"/>
+      <rect x="283.5" y="17" width="6"   height="23" rx="3"/>
+      <rect x="291"   y="18" width="6"   height="22" rx="3"/>
+      <rect x="298.5" y="22" width="5.5" height="16" rx="2.75"/>
+      <rect x="267" y="36" width="7" height="16" rx="3.5" transform="rotate(-35 270.5 44)"/>
+      <rect x="274" y="34" width="32" height="22" rx="9"/>
+    </g>
+
+    <!-- "I'm Hemant" -->
+    <text class="title" x="322" y="50" text-anchor="start">I'm Hemant</text>
+  </g>
+
+  <!-- Blinking cursor that travels with the typing edge -->
+  <rect class="cursor" y="24" width="3" height="30" rx="1.5" x="120">
+    <animate attributeName="x" calcMode="discrete"
+      dur="1.9s" fill="freeze"
+      keyTimes="0;0.0455;0.0909;0.1364;0.1818;0.2273;0.2727;0.3182;0.3636;0.4091;0.4545;0.5;0.5455;0.5909;0.6364;0.6818;0.7273;0.7727;0.8182;0.8636;0.9091;0.9545;1"
+      values="120;137.1;154.2;171.3;188.4;205.5;222.5;239.6;256.7;273.8;290.9;308;325.1;342.2;359.3;376.4;393.5;410.5;427.6;444.7;461.8;478.9;496"/>
+    <animate attributeName="opacity"
+      values="1;1;0;0" keyTimes="0;0.5;0.5;1"
+      dur="1s" repeatCount="indefinite" calcMode="discrete"/>
+  </rect>
+</svg>
